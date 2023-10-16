@@ -257,27 +257,8 @@
                <div id="complainants" class="tab-pane fade show active">
                   <h5 class="text-info">Adding Complainants</h5>
                   <form>
-                     <div class="form-group">
-                        <label for="complainant_full_name">Full Name</label>
-                        <input type="text" id="complainant_full_name" class="form-control">
-                     </div>
 
-                     <div class="form-group">
-                        <label for="birthdate">Birthdate</label>
-                        <input type="date" id="birthdate" class="form-control">
-                     </div>
-
-                     <div class="form-group">
-                        <label for="address">Address</label>
-                        <input type="text" id="address" class="form-control">
-                     </div>
-
-                     <div class="form-group">
-                        <label for="contact_number">Contact Number</label>
-                        <input type="text" id="contact_number" class="form-control">
-                     </div>
-
-                     <div class="form-row">
+                  <div class="form-row">
                         <div class="form-group col-md-4">
                            <label for="complainant_first_name">First Name</label>
                            <input type="text" id="complainant_first_name" class="form-control">
@@ -294,19 +275,6 @@
                         </div>
                      </div>
 
-                     <button type="button" class="btn btn-success">Add Complainant</button>
-                  </form>
-                  <span class="text-danger error-text Complainant_error"></span>
-               </div>
-
-               <!-- Respondents Tab -->
-               <div id="respondents" class="tab-pane fade">
-                  <h5 class="text-info">Adding Respondents</h5>
-                  <form>
-                     <div class="form-group">
-                        <label for="respondent_full_name">Full Name</label>
-                        <input type="text" id="respondent_full_name" class="form-control">
-                     </div>
 
                      <div class="form-group">
                         <label for="birthdate">Birthdate</label>
@@ -323,7 +291,20 @@
                         <input type="text" id="contact_number" class="form-control">
                      </div>
 
-                     <div class="form-row">
+
+
+                     <!-- <button type="button" class="btn btn-success">Add Complainant</button> -->
+                     <button type="submit" id="saveBtn" class="btn btn-success">Create Blotter</button>
+                  </form>
+                  <span class="text-danger error-text Complainant_error"></span>
+               </div>
+
+               <!-- Respondents Tab -->
+               <div id="respondents" class="tab-pane fade">
+                  <h5 class="text-info">Adding Respondents</h5>
+                  <form>
+
+                  <div class="form-row">
                         <div class="form-group col-md-4">
                            <label for="respondent_first_name">First Name</label>
                            <input type="text" id="respondent_first_name" class="form-control">
@@ -340,7 +321,25 @@
                         </div>
                      </div>
 
-                     <button type="button" class="btn btn-success">Add Respondent</button>
+
+                     <div class="form-group">
+                        <label for="birthdate">Birthdate</label>
+                        <input type="date" id="birthdate" class="form-control">
+                     </div>
+
+                     <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" class="form-control">
+                     </div>
+
+                     <div class="form-group">
+                        <label for="contact_number">Contact Number</label>
+                        <input type="text" id="contact_number" class="form-control">
+                     </div>
+
+
+
+                     <button type="submit" id="saveBtn" class="btn btn-success">Add New Blotter</button>
                   </form>
                   <span class="text-danger error-text Respondent_error"></span>
                </div>
@@ -569,11 +568,13 @@
                 ajax: "{{ route('personinvolves.index') }}",
                 columns: [
                   {data: 'add_complainant', name: 'add_complainant', orderable: false, searchable: false},
-                  {data: 'fullname', name: 'fullname', orderable: false, searchable: false},
-                  { data: 'alias', name: 'alias'},
-                  { data: 'firstname', name: 'firstname', visible: false},
-                  { data: 'middlename', name: 'middlename', visible: false},
-                  { data: 'lastname', name: 'lastname', visible: false}
+                  { data: 'complainant_first_name', name: 'firstname', visible: false},
+                  { data: 'complainant_middle_name', name: 'middlename', visible: false},
+                  { data: 'complainant_last_name', name: 'lastname', visible: false}
+
+                  {data: 'complainant_birthdate', name: 'birthday', orderable: false, searchable: true},
+                  { data: 'complainant_contact_number', name: 'contact'},
+
                 ]
 
             });
@@ -593,12 +594,12 @@
                 serverSide: true,
                 ajax: "{{ route('personinvolves.index') }}",
                 columns: [
-                  {data: 'add_respondent', name: 'add_respondent', orderable: false, searchable: false},
-                  {data: 'fullname', name: 'fullname', orderable: false, searchable: false},
-                  { data: 'alias', name: 'alias'},
-                  { data: 'firstname', name: 'firstname', visible: false},
-                  { data: 'middlename', name: 'middlename', visible: false},
-                  { data: 'lastname', name: 'lastname', visible: false}
+                {data: 'add_complainant', name: 'add_respondent', orderable: false, searchable: false},
+                  { data: 'respondent_first_name', name: 'firstname', visible: false},
+                  { data: 'respondent_middle_name', name: 'middlename', visible: false},
+                  { data: 'respondent_last_name', name: 'lastname', visible: false}
+                  {data: 'respondent_birthdate', name: 'birthday', orderable: false, searchable: true},
+                  { data: 'respondent_contact_number', name: 'contact'},
                 ]
 
             });
