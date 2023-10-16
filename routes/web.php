@@ -185,8 +185,8 @@ Route::get("/barangay/forgot_password
 
 
 
-
-
+//BarangayMembersController
+Route::resource('barangay', 'BrgyOfficialController');
 
 
 

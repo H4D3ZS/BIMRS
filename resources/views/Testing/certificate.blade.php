@@ -109,7 +109,7 @@
                       <br>
                       <br>
                       <p style=" font-size: 17px ; font-family: Arial, Helvetica, sans-serif; text-align: justify;text-justify: inter-word;">
-                          THIS IS TO CERTIFY that there is no resident in this Barangay namely
+                          PDF SAMPLE
                           <b>RHENSY DE MESA COUTARROUS, MARY GLADDYS FERNANDEZ ALLAREY, GLENDA JIMENEZ PEREZ and ANDREA DATINGUINDO MERCADO</b>, as of this date.</p>
                           <br>
                    <p style="  text-indent: 40px;font-size: 17px ; font-family: Arial, Helvetica, sans-serif;text-justify: inter-word;">
@@ -129,7 +129,7 @@
                          </div>
 
 
-                         <footer><span><i>***This is a computer-generated document. No signature is required***</i></span></footer>
+                         <footer><span><i>***SIGNATURE REQUIRED*</i></span></footer>
 
                       </div>
 
