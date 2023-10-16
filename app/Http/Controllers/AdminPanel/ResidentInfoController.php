@@ -23,7 +23,7 @@ class ResidentInfoController extends Controller
         if (!session()->has("user")) {
             return redirect("login");
         }
-        
+
         $area_setting = area_setting::all();
 
         $resident = resident_info::latest()->get();
@@ -65,8 +65,6 @@ class ResidentInfoController extends Controller
             'birthday' => 'required',
             'age'  => 'required',
             'gender' => 'required',
-            'civilstatus'  => 'required',
-            'voterstatus'  => 'required',
             'birthplace'  => 'required',
             'citizenship'  => 'required',
             'telephone'  => 'required',
@@ -96,27 +94,11 @@ class ResidentInfoController extends Controller
         ['lastname' => $request->lastname,
         'firstname' => $request->firstname,
         'middlename'=> $request->middlename,
-        'alias' =>$request->alias,
+
         'birthday'=>$request->birthday,
         'age'=>$request->age,
         'gender'=>$request->gender,
-        'civilstatus'=>$request->civilstatus,
-        'voterstatus'=>$request->voterstatus,
-        'birth_of_place'=>$request->birthplace,
-        'citizenship'=>$request->citizenship,
-        'telephone_no'=>$request->telephone,
         'mobile_no'=>$request->mobile,
-        'height'=>$request->height,
-        'weight'=>$request->weight,
-        'PAG_IBIG'=>$request->PAG_IBIG,
-        'PHILHEALTH'=>$request->PHILHEALTH,
-        'SSS'=>$request->SSS,
-        'TIN'=>$request->TIN,
-        'email'=>$request->email,
-        'spouse'=>$request->spouse,
-        'father'=>$request->father,
-        'mother'=>$request->mother,
-        'area'=>$request->area,
         'address_1'=>$request->address_1,
         'address_2'=>$request->address_2]);
         $data = DB::table('area_settings')
