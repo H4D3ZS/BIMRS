@@ -349,10 +349,11 @@
                <table   class=" bulk_action dataTables_info table resident-table datatable-element resident table-striped jambo_table bulk_action text-center border dataTable no-footer">
                   <thead>
                      <tr class="headings">
-                        <th >
-                            <input class="icheckbox_flat-green" type="checkbox"   id="check-all" >
-
-                          </th>
+                     <th>
+    <form>
+        <input type="checkbox" class="flat icheckbox_flat-green" name="check-all" id="check-all" hidden>
+    </form>
+</th>
                         <th class="column-title">Action</th>
                         <th class="column-title">Resident_ID</th>
                         <th class="column-title">Last Name </th>

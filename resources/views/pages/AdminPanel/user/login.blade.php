@@ -26,8 +26,8 @@
 
 
 
-<!-- <body style="background-image: url({{ URL::asset('images/background.png') }}); background-repeat:no-repeat; background-size: cover;"> -->
-  <h1 class="text-white m-4">Admin Login</h1>
+<body style="background-image: url({{ URL::asset('images/background.png') }}); background-repeat:no-repeat; background-size: cover;">
+<center>  <h1 class="text-white m-4">Admin Login</h1> </center>
 <div class="container">
   <div class="row">
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -57,7 +57,7 @@
             <button class="btn btn-lg btn-primary btn-block text-uppercase mt-3" id="loginBtn" type="submit">Log in</button>
           </form>
           {{-- end form --}}
-          <!-- <br><a href="/barangay/login">Go to client login ></a> -->
+          <br><a href="/barangay/login">Go to staff login ></a>
         </div>
       </div>
     </div>

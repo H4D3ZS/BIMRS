@@ -19,14 +19,6 @@
                   <th class="column-title">Position </th>
                   <th class="column-title">Year of Services </th>
                </tr>
-            </thead>
-            <tbody>
-       ($brgy_official)
-            <tr class="even pointer">
-                <td class=" ">{{ $brgy_official->name }}</td>
-                <td class=" ">{{ $brgy_official->position }}</td>
-                <!-- <td class=" ">{{ $brgy->year_of_service }}</td> -->
-            </tr>
 
 </tbody>
 

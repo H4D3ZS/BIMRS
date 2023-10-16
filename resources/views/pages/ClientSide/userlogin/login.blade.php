@@ -63,7 +63,7 @@
           {{-- end form --}}
 
 
-          <br><a href="/barangay/register">REGISTER</a>
+          <br><a href="/barangay/register">STAFF REGISTER</a>
           <br><a href="/login">ADMIN LOGIN</a>
         </div>
       </div>

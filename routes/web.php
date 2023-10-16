@@ -93,9 +93,7 @@ Route::post('certificate/table/type', [CertificateController::class, 'certtypesu
 Route::get('certificate/table/type/{cert_id}/edit', [CertificateController::class, 'certtypeedit'])->name('certtypesubmit.edit');
 Route::delete('certificate/table/type/{cert_id}', [CertificateController::class, 'certtypedelete'])->name('certtypedelete.delete');
 Route::GET('certificate/print/cert', [PrintController::class, 'Print'])->name('Print.post');
-//Route::get('certificate/print/cert', [PrintController::class, 'index'])->name('Print.index');
 
-//Route::post('certificate/print/cert', [CertificateController::class, 'storerequest'])->name('storerequest.post');
 
 
 
@@ -157,12 +155,12 @@ Route::resource("/barangay/blotter", ClientBlotterController::class);
 
 // Client Login
 Route::get("/barangay/login", [ResidentUserAccountController::class, 'client_login']);
-// Route::post("/barangay/login", [ResidentUserAccountController::class, 'client_check']);
-// Route::get("/barangay/register", [ResidentUserAccountController::class, 'client_register']);
-// Route::post("/barangay/register", [ResidentUserAccountController::class, 'client_register_check']);
-// Route::get("/barangay/logout", [ResidentUserAccountController::class, 'client_logout']);
-// Route::get("/barangay/forgot_password
-// ", [ResidentUserAccountController::class, 'client_forgot_password']);
+Route::post("/barangay/login", [ResidentUserAccountController::class, 'client_check']);
+Route::get("/barangay/register", [ResidentUserAccountController::class, 'client_register']);
+Route::post("/barangay/register", [ResidentUserAccountController::class, 'client_register_check']);
+Route::get("/barangay/logout", [ResidentUserAccountController::class, 'client_logout']);
+Route::get("/barangay/forgot_password
+", [ResidentUserAccountController::class, 'client_forgot_password']);
 
 
 
