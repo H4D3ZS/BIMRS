@@ -50,40 +50,39 @@
                   <div class="form-row">
                         <div class="form-group col-md-4">
                            <label for="complainant_first_name">First Name</label>
-                           <input type="text" id="complainant_first_name" class="form-control">
+                           <input type="text" id="complainant_firstname" class="form-control">
                         </div>
 
                         <div class="form-group col-md-4">
                            <label for="complainant_middle_name">Middle Name</label>
-                           <input type="text" id="complainant_middle_name" class="form-control">
+                           <input type="text" id="complainant_middlename" class="form-control">
                         </div>
 
                         <div class="form-group col-md-4">
                            <label for="complainant_last_name">Last Name</label>
-                           <input type="text" id="complainant_last_name" class="form-control">
+                           <input type="text" id="complainant_lastname" class="form-control">
                         </div>
                      </div>
 
 
                      <div class="form-group">
                         <label for="birthdate">Birthdate</label>
-                        <input type="date" id="birthdate" class="form-control">
+                        <input type="date" id="complainant_birthdate" class="form-control">
                      </div>
 
                      <div class="form-group">
                         <label for="address">Address</label>
-                        <input type="text" id="address" class="form-control">
+                        <input type="text" id="complainant_address" class="form-control">
                      </div>
 
                      <div class="form-group">
                         <label for="contact_number">Contact Number</label>
-                        <input type="text" id="contact_number" class="form-control">
+                        <input type="text" id="complainant_contact_number" class="form-control">
                      </div>
 
 
 
-                     <!-- <button type="button" class="btn btn-success">Add Complainant</button> -->
-                     <button type="submit" id="saveBtn" class="btn btn-success">Create Blotter</button>
+                  <button type="submit" id="createblotterBtn" class="btn btn-success">Create Blotter</button>
                   </form>
                   <span class="text-danger error-text Complainant_error"></span>
                </div>
@@ -230,6 +229,9 @@
             </button>
          </div>
 
+         <div class="topnav navbar navbar">
+  <button class="btn btn-success text-white " href="#home" data-toggle="modal" data-target="#blottermodal" id="createNewBlotter">New Blotter Record <i class="fa fa-plus"></i></button>
+
          <div class="modal-body">
             <table  class="bulk_action dataTables_info table datatable-element table-striped jambo_table bulk_action text-center border no-footer">
                <thead>
@@ -279,8 +281,9 @@
             </table>
             <h4>Incident Narrative</h4>
             <textarea name="viewincident_narrative" id="viewincident_narrative" rows="10" style="width: 100%; border:none;" disabled></textarea>
-            {{-- <form id="blotterform"  name="blotterform" class="modal-input">
-            </form> --}}
+            <!-- {{-- <form id="blotterform"  name="blotterform" class="modal-input"> -->
+
+            </form>
          </div>
 
 
@@ -359,7 +362,7 @@
                   {data: 'add_complainant', name: 'add_complainant', orderable: false, searchable: false},
                   { data: 'complainant_first_name', name: 'firstname', visible: false},
                   { data: 'complainant_middle_name', name: 'middlename', visible: false},
-                  { data: 'complainant_last_name', name: 'lastname', visible: false}
+                  { data: 'complainant_last_name', name: 'lastname', visible: false},
 
                   {data: 'complainant_birthdate', name: 'birthday', orderable: false, searchable: true},
                   { data: 'complainant_contact_number', name: 'contact'},
@@ -386,7 +389,7 @@
                 {data: 'add_complainant', name: 'add_respondent', orderable: false, searchable: false},
                   { data: 'respondent_first_name', name: 'firstname', visible: false},
                   { data: 'respondent_middle_name', name: 'middlename', visible: false},
-                  { data: 'respondent_last_name', name: 'lastname', visible: false}
+                  { data: 'respondent_last_name', name: 'lastname', visible: false},
                   {data: 'respondent_birthdate', name: 'birthday', orderable: false, searchable: true},
                   { data: 'respondent_contact_number', name: 'contact'},
                 ]
@@ -422,7 +425,7 @@
 
 
             $('#createNewBlotterUser').click(function () {
-               $("#saveBtn").attr("disabled", false);
+               $("#saveBtn").attr("enable", false);
                  $('#saveBtn').val("create-blotter");
                  $('#blotter_id').val('');
                  $('#blotterform').trigger("reset");
@@ -484,7 +487,7 @@
              $('body').on('click', '.editBlotter', function () {
                var blotter_id = $(this).data('id');
                $(document).find('span.error-text').text('');
-               $("#saveBtn").attr("disabled", false);
+               $("#saveBtn").attr("enable", false);
                $('#blotterform').trigger("reset");
                $.get("{{ route('blotters.index') }}" +'/' + blotter_id +'/edit', function (data) {
                   $('#modelHeading').html("Edit Blotter");
@@ -540,7 +543,8 @@
                })
             });
 
-             $('#saveBtn').click(function (e) {
+             $('#saveBtn').on("click", function (e) {
+
 
                 e.preventDefault();
                 $(this).attr("disabled", true);
@@ -558,7 +562,7 @@
                         $.each(data.error, function(prefix, val){
                            $('span.'+prefix+'_error').text(val[0]);
                         });
-                        $('#saveBtn').attr("disabled", false);
+                        $('#saveBtn').attr("enable", false);
                      }
                      else{
                      $(document).find('span.error-text').text('');
@@ -595,7 +599,24 @@
          });
                // Blotter and Narrative Report End
 
-         });
+
+
+
+         //New Blotter Functions
+
+         $('#createblotterBtn')
+
+         var query = { fname:  };
+            $.$.ajax({
+                type: "POST",
+                url: "/blotter/complainant'",
+                data: "data",
+                dataType: "dataType",
+                success: function (response) {
+
+                }
+            });
+        });
 
 
 

@@ -65,25 +65,22 @@ class BlotterController extends Controller
         $certificate_layout = Certificate_layout::all();
 
 
-        // return view(
-        //     'pages.ClientSide.userdashboard.blotterpdfformat.blotter',
-        //     [
-        //         "data" => $data,
-        //         "complainant" => $complainant,
-        //         "respondent" => $respondent,
-        //         "victim" => $victim,
-        //         "attacker" => $attacker,
-        //         "certificate_layout" => $certificate_layout
-        //     ]
-        // );
+        return view(
+            'pages.ClientSide.userdashboard.blotterpdfformat.blotter',
+            [
+                "data" => $data,
+                "complainant" => $complainant,
+                "respondent" => $respondent,
+                "certificate_layout" => $certificate_layout
+            ]
+        );
         $pdf = PDF::loadView(
             'pages.ClientSide.userdashboard.blotterpdfformat.blotter',
             [
                 "data" => $data,
                 "complainant" => $complainant,
                 "respondent" => $respondent,
-                "victim" => $victim,
-                "attacker" => $attacker,
+
                 "certificate_layout" => $certificate_layout
             ]
         );

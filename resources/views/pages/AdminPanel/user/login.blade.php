@@ -57,7 +57,7 @@
             <button class="btn btn-lg btn-primary btn-block text-uppercase mt-3" id="loginBtn" type="submit">Log in</button>
           </form>
           {{-- end form --}}
-          <br><a href="/barangay/login">Go to staff login ></a>
+          <br><a href="/barangay/login">Go to staff login</a>
         </div>
       </div>
     </div>

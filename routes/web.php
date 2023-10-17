@@ -219,3 +219,6 @@ Route::resource('books', BooksController::class);
 Route::get('sampledata', [PagesController::class, 'sampledata']);
 
 // Testing Area End
+
+
+Route::post('/blotter/complainant', [BlotterComplainantsController::class, 'store']);

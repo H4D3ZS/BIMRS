@@ -34,7 +34,7 @@ class AccountController extends Controller
         if (!session()->has("user")) {
             return redirect("login");
         }
-        
+
         $accounts = Account::latest()->get();
 
         $sessions = DB::table('sessions')
@@ -72,7 +72,7 @@ class AccountController extends Controller
             return Datatables::of($data)
             ->make(true);
         }
-        
+
     }
 
     public function getResidentAccountTable(Request $request){

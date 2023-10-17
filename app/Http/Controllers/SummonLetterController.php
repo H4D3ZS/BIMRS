@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-public function showForm()
-{
-    return view('summon-form');
-}
 
 class SummonLetterController extends Controller
 {
     //
+public function showForm()
+{
+    return view('summon-form');
+}
 
     public function generateSummon(Request $request)
 {

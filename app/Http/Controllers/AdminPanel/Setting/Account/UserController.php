@@ -79,13 +79,13 @@ class UserController extends Controller
             "register_password_confirmation" => "required"
         ],
         [
-            "register_firstname.required" => "We need to know your name.",
-            "register_lastname.required" => "We need to know your name.",
-            "register_username.required" => "You need a username to register.",
+            "register_firstname.required" => "Name registration.",
+            "register_lastname.required" => "Name registration confirmation",
+            "register_username.required" => "username registration",
             "register_email.required" => "Enter an email to register.",
-            "register_email.ends_with" => "we need you to give us a valid email.",
+            "register_email.ends_with" => "Enter Valid Email For Confirmation",
             "register_password.required" => "Enter Password",
-            "register_password_confirmation.required" => "We need you to verify your password!!!"
+            "register_password_confirmation.required" => "Password Confirmation is Mismatched."
         ])->validate();
 
 

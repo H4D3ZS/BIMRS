@@ -12,7 +12,7 @@
       <!-- <li class="list-none"><a href="/summon" class="list-group-item list-group-item-action bg-light text-adjust {{ (request()->is('certificate*')) ? 'active-page active' : '' }}"><i class="fa fa-certificate fa-lg icon-adjust"></i> Legal Notice</a> </li> -->
 
       <li class="list-none">
-    <a href="/summon" class="list-group-item list-group-item-action bg-light text-adjust {{ (request()->is('certificate*')) ? 'active-page active' : '' }}">
+    <a href="#" class="list-group-item list-group-item-action bg-light text-adjust {{ (request()->is('certificate*')) ? 'active-page active' : '' }}">
         <i class="fa fa-certificate fa-lg icon-adjust"></i> Legal Notice
         <span class="toggle-sublist">▼</span>
     </a>

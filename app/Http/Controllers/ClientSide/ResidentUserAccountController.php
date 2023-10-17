@@ -55,8 +55,8 @@ class ResidentUserAccountController extends Controller
         $layout = DB::table('barangayimages')
         ->where('barangay_id','=',1)
         ->first();
-        // session('layout');
-        // session(['layout.image' => $layout->image]);
+        session('layout');
+        session(['layout.image' => $layout->image]);
         session('resident');
         session(['resident.email' => $request->client_login_email]);
         session(['resident.firstname' => $resident->first_name]);
@@ -94,7 +94,7 @@ class ResidentUserAccountController extends Controller
             "register_email.required" => "Enter an email to register.",
             "register_email.ends_with" => "we need you to give us a valid email.",
             "register_password.required" => "Enter Password",
-            "register_password_confirmation.required" => "We need you to verify your password!!!",
+            "register_password_confirmation.required" => "Password Mismatched",
             "register_username.unique"=> "Username has already been taken.",
             "register_gender.required"=> "This field cannot be empty.",
             "register_voter_status.required"=> "This field cannot be empty."

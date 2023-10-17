@@ -57,7 +57,7 @@ class BlotterController extends Controller
                 "incident_narrative" => "required",
                 "Complainant" => "required",
                 "Respondent" => "required",
-              
+
             ]
 
         );
@@ -66,7 +66,7 @@ class BlotterController extends Controller
             return response()->json(['status' => 0, 'error' => $validator->errors()->toArray()]);
         } else {
 
-        
+
 
             if ($request->schedule_date != null) {
                 $request->schedule = "Schedule";
@@ -118,7 +118,7 @@ class BlotterController extends Controller
         if (!session()->has("user")) {
             return redirect("login");
         }
-        
+
         $resident = resident_info::all();
         $blotter = blotters::all();
         return view('pages.AdminPanel.blotter', ['blotter' => $blotter,  'resident' => $resident]);
