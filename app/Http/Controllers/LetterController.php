@@ -4,29 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
-use PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class LetterController extends Controller
 {
     public function showForm()
     {
-        return view('/resources/views/letters/letter-form.blade.php');
+        return view('letters.letter-form');
     }
 
     public function generatePDF(Request $request)
     {
-        $data = $request->validate([
-            'caseNumber' => 'required',
-            'complaintDescription' => 'required',
-            'day' => 'required',
-            'month' => 'required',
-            'year' => 'required',
-            'receivedDay' => 'required',
-            'receivedMonth' => 'required',
-            'receivedYear' => 'required',
-        ]);
+        $data = [
+            'caseNumber' => $request->caseNumber,
+            'complaintDescription' => $request->complaintDescription,
+            'day' => $request->day,
+            'month' => $request->month,
+            'year' => $request->year,
+            'receivedDay' => $request->receivedDay,
+            'receivedMonth' => $request->receivedMonth,
+            'receivedYear' => $request->receivedYear,
+        ];
 
-        $pdf = PDF::loadView('letter', $data);
+        $pdf = PDF::loadView('letter', compact('data'));
 
         return $pdf->download('letter.pdf');
     }

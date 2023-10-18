@@ -69,6 +69,7 @@ Route::get('resident/person/{resident_id}/blotter/', [ResidentInfoController::cl
 // Blotter Module
 Route::get('/blotter', [BlotterController::class, 'show']);
 Route::resource('blotters', BlotterController::class);
+Route::post('idnblotter', [BlotterController::class, 'createIDN']);
 Route::resource('personinvolves', PersonInvolveController::class);
 
 //Settlement Module
@@ -95,6 +96,10 @@ Route::delete('certificate/table/type/{cert_id}', [CertificateController::class,
 Route::GET('certificate/print/cert', [PrintController::class, 'Print'])->name('Print.post');
 
 
+// View PDF
+Route::get('viewpdf', function(){
+    return view('letters.letter-form');
+});
 
 
 //Maintenance Moduule

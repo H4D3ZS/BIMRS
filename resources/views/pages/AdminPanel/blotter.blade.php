@@ -47,7 +47,7 @@
                   <h5 class="text-info">Adding Complainants</h5>
 
 
-                     <form method="POST" id="complainantForm">
+                     <form action="/blotters" method="POST" id="complainantForm">
    @csrf
    <!-- Your existing form fields with name attributes -->
    <div class="form-row">
@@ -82,7 +82,7 @@
                         <label for="contact_number">Contact Number</label>
                         <input type="text" id="complainant_contact_number" class="form-control">
                      </div>
-   <button type="button" id="createblotterBtn" class="btn btn-success">Create Blotter</button>
+   <button type="submit" id="createblotterBtn" class="btn btn-success">Create Blotter</button>
 </form>
 
 
@@ -139,29 +139,30 @@
                <!-- Incident Detail Tab -->
                <div id="incident-detail" class="tab-pane fade">
                   <h5 class="text-info">Incident Detail and Narrative</h5>
-                  <form>
+                  <form action='idnblotter' method="POST">
+                     @csrf
                      <div class="form-group">
                         <label for="incident_location">Incident Location</label>
-                        <input type="text" id="incident_location" class="form-control" required>
+                        <input type="text" name="incident_location" id="incident_location" class="form-control" required>
                         <span class="text-danger error-text incident_location_error"></span>
                      </div>
 
                      <div class="form-group">
                         <label for="incident_type">Incident Type</label>
-                        <input type="text" id="incident_type" class="form-control" required>
+                        <input type="text" name="incident_type" id="incident_type" class="form-control" required>
                         <span class="text-danger error-text incident_type_error"></span>
                      </div>
 
                      <div class="form-row">
                         <div class="form-group col-md-6">
                            <label for="date_incident">Date of Incident</label>
-                           <input type="date" id="date_incident" class="form-control" required>
+                           <input type="date" name="date_incident" id="date_incident" class="form-control" required>
                            <span class="text-danger error-text date_incident_error"></span>
                         </div>
 
                         <div class="form-group col-md-6">
                            <label for="time_incident">Time of Incident</label>
-                           <input type="time" id="time_incident" class="form-control" required>
+                           <input type="time" name="time_incident" id="time_incident" class="form-control" required>
                            <span class="text-danger error-text time_incident_error"></span>
                         </div>
                      </div>
@@ -169,20 +170,20 @@
                      <div class="form-row">
                         <div class="form-group col-md-6">
                            <label for="date_reported">Date Reported</label>
-                           <input type="date" id="date_reported" class="form-control" required>
+                           <input type="date" name="date_reported" id="date_reported" class="form-control" required>
                            <span class="text-danger error-text date_reported_error"></span>
                         </div>
 
                         <div class="form-group col-md-6">
                            <label for="time_reported">Time Reported</label>
-                           <input type="time" id="time_reported" class="form-control" required>
+                           <input type="time" name="time_reported" id="time_reported" class="form-control" required>
                            <span class="text-danger error-text time_reported_error"></span>
                         </div>
                      </div>
 
                      <div class="form-group">
                         <label for="schedule_date">Date Schedule</label>
-                        <input type="date" id="schedule_date" class="form-control" required>
+                        <input type="date" id="schedule_date" name="schedule_date" class="form-control" required>
                         <input type="text" id="schedule" name="schedule" hidden>
                      </div>
 
@@ -205,7 +206,7 @@
                         <span class="text-danger error-text incident_narrative_error"></span>
                      </div>
 
-                     <button type="button" class="btn btn-success">Save Blotter</button>
+                     <button type="submit" class="btn btn-success">Save Blotter</button>
                   </form>
                </div>
             </div>
@@ -351,6 +352,17 @@
                </tr>
             </thead>
             <tbody>
+               @foreach ($blotter as $blot)
+               <tr>
+                  <td>{{$blot->blotter_id}}</td>
+                  <td>{{$blot->status}}</td>
+                  <td>{{$blot->date_reported}}</td>
+                  <td>{{$blot->time_reported}}</td>
+                  <td>{{$blot->incident_type}}</td>
+                  <td>{{$blot->date_incident}}</td>
+                  <td>{{$blot->time_incident}}</td>
+               </tr>
+               @endforeach
             </tbody>
    </table>
    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>

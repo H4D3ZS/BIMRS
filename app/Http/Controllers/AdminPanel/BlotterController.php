@@ -21,53 +21,19 @@ class BlotterController extends Controller
     {
         $blotters = blotters::latest()->get();
 
-        if ($request->ajax()) {
-            $data = blotters::latest()->get();
-            return Datatables::of($data)
-                ->addIndexColumn()
-                ->addColumn('action', function ($row) {
+        dd($blotters);
 
-                    $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="' . $row->blotter_id . '" data-original-title="Edit" class="edit btn btn-info  btn-xs pr-4 pl-4 editBlotter"><i class="fa fa-pencil fa-lg"></i> </a>';
-
-                    $btn = $btn . ' <a href="javascript:void(0)" data-toggle="tooltip"   data-id="' . $row->blotter_id . '" data-original-title="Delete" class="btn btn-danger btn-xs pr-4 pl-4 deleteBlotter"><i class="fa fa-trash fa-lg"></i> </a>';
-                    $btn = $btn . ' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="' . $row->blotter_id . '" data-original-title="View" class="btn btn-primary btn-xs pr-4 pl-4 viewBlotter"><i class="fa fa-folder fa-lg"></i> </a>';
-
-                    return $btn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
-        }
-
-        return view('pages.AdminPanel.blotter',  compact('blotters'));
+        return view('pages.AdminPanel.blotter', ['blotters'=>$blotters]);
     }
 
 
     public function store(Request $request)
     {
-        $validator = Validator::make(
-            $request->all(),
-            [
-                "incident_location" => "required",
-                "incident_type" => "required",
-                "date_incident" => "required",
-                "time_incident" => "required",
-                "date_reported" => "required",
-                "time_reported" => "required",
-                "status" => "required",
-                "incident_narrative" => "required",
-                "Complainant" => "required",
-                "Respondent" => "required",
+        
+    }
 
-            ]
-
-        );
-
-        if ($validator->fails()) {
-            return response()->json(['status' => 0, 'error' => $validator->errors()->toArray()]);
-        } else {
-
-
-
+    public function createIDN(Request $request)
+    {
             if ($request->schedule_date != null) {
                 $request->schedule = "Schedule";
             } else {
@@ -94,22 +60,9 @@ class BlotterController extends Controller
                 ]
             );
 
-            $blotter_id = $blotters->blotter_id;
-            DB::table('person_involves')->where('blotter_id',  $blotter_id)->delete();
+            return redirect()->back();
 
-            foreach ($request->ids as $key => $ids) {
-                $data = new person_involve();
-                $data->blotter_id = $blotter_id;
-                $data->resident_id = $ids;
-                $data->person_involve = $request->person_involve[$key];
-                $data->involvement_type = $request->involvement_type[$key];
-                $data->save();
-            }
-
-
-
-            return response()->json(['success' => 'New Blotter saved successfully.']);
-        }
+            // return response()->json(['success' => 'New Blotter saved successfully.']);
     }
 
 

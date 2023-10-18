@@ -1,0 +1,1 @@
+{{PDF::loadFile(public_path().'/myfile.html')}}

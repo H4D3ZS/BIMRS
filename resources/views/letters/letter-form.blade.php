@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.apps')
 
 @section('content')
     <form action="{{ route('generatePDF') }}" method="post">
