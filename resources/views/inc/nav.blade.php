@@ -17,8 +17,8 @@
         <span class="toggle-sublist">▼</span>
     </a>
     <ul class="sublist">
-        <li><a href="/resources/views/letters/pdfview.blade.php">Amecable Settlement</a></li>
-        <li><a href="/resources/views/letters/pdfview.blade.php">Settlement</a></li>
+        <li><a href="/resources/views/letters/pdfview.blade.php">Mediation</a></li>
+        <li><a href="/resources/views/letters/pdfview.blade.php">Amicable Settlement</a></li>
 
     </ul>
 </li>
