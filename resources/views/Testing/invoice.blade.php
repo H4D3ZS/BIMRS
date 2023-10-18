@@ -151,7 +151,7 @@
                 <div class="col-lg-8">
                   <div class="invbody-terms">
                     Thank you for your business. <br>
-                    <br>
+                    <br>ajax
                     <h4>Payment Terms and Methods</h4>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cumque neque velit tenetur pariatur perspiciatis dignissimos corporis laborum doloribus, inventore.
