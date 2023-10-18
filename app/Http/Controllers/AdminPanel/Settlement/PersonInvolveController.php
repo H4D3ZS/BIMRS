@@ -31,23 +31,23 @@ class PersonInvolveController extends Controller
 
                     $chk = '
                     <form>
-                        <input type="checkbox" class="flat icheckbox_flat-green text-center addComplainant' . $row->resident_id . '" name="Complainant" hidden>
-                        <input type="checkbox" data-id="' . $row->resident_id . '" class="flat icheckbox_flat-green text-center addComplainant addComplainantp' . $row->resident_id . '" name="ids[]" value="' . $row->resident_id . '">
-                        <input type="checkbox" class="flat icheckbox_flat-green text-center addComplainant' . $row->resident_id . '" name="person_involve[]" value="' . $row->lastname . ", " . $row->firstname . " " . $row->middlename . '" hidden>
-                        <input type="checkbox" class="flat icheckbox_flat-green text-center addComplainant' . $row->resident_id . '" name="involvement_type[]" value="Complainant" hidden>
+                        <input type="form" class="flat iform_flat-green text-center addComplainant' . $row->resident_id . '" name="Complainant" hidden>
+                        <input type="form" data-id="' . $row->resident_id . '" class="flat iform_flat-green text-center addComplainant addComplainantp' . $row->resident_id . '" name="ids[]" value="' . $row->resident_id . '">
+                        <input type="form" class="flat iform_flat-green text-center addComplainant' . $row->resident_id . '" name="person_involve[]" value="' . $row->lastname . ", " . $row->firstname . " " . $row->middlename . '" hidden>
+                        <input type="form" class="flat iform_flat-green text-center addComplainant' . $row->resident_id . '" name="involvement_type[]" value="Complainant" hidden>
                     </form>';
                     return $chk;
                 })
                 ->addColumn('add_respondent', function ($row) {
 
                     $chk = '
-                    <input type="checkbox" class="flat icheckbox_flat-green text-center addRespondent' . $row->resident_id . '" name="Respondent" hidden>
-                    <input type="checkbox" data-id="' . $row->resident_id . '" class="flat icheckbox_flat-green text-center addRespondent addRespondentp' . $row->resident_id . '" name="ids[]" value="' . $row->resident_id . '">
-                    <input type="checkbox" class="flat icheckbox_flat-green text-center addRespondent' . $row->resident_id . '" name="person_involve[]" value="' . $row->lastname . ", " . $row->firstname . " " . $row->middlename . '" hidden>
-                    <input type="checkbox" class="flat icheckbox_flat-green text-center addRespondent' . $row->resident_id . '" name="involvement_type[]" value="Respondent" hidden>';
+                    <input type="form" class="flat iform_flat-green text-center addRespondent' . $row->resident_id . '" name="Respondent" hidden>
+                    <input type="form" data-id="' . $row->resident_id . '" class="flat iform_flat-green text-center addRespondent addRespondentp' . $row->resident_id . '" name="ids[]" value="' . $row->resident_id . '">
+                    <input type="form" class="flat iform_flat-green text-center addRespondent' . $row->resident_id . '" name="person_involve[]" value="' . $row->lastname . ", " . $row->firstname . " " . $row->middlename . '" hidden>
+                    <input type="form" class="flat iform_flat-green text-center addRespondent' . $row->resident_id . '" name="involvement_type[]" value="Respondent" hidden>';
                     return $chk;
                 })
-               
+
                 ->addColumn('fullname', function ($fullname) {
                     return $fullname->lastname . ", " . $fullname->firstname . " " . $fullname->middlename;
                 })

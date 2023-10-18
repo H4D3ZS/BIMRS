@@ -222,3 +222,15 @@ Route::get('sampledata', [PagesController::class, 'sampledata']);
 
 
 Route::post('/blotter/complainant', [BlotterComplainantsController::class, 'store']);
+
+#PDF
+
+// Route::get('/resources/views/letters/pdfview.blade.php',array('as'=>'pdfview','uses'=>'amecablepdf@pdfview'));
+// Route::get('/resources/views/letters/pdfview.blade.php',array('as'=>'pdfview','uses'=>'complaint@pdfview'));
+// Route::get('/pdfview', 'AmeCablePdfController@pdfview');
+// Route::post('/pdfview', [AmeCablePdfController::class, 'store']);
+
+
+use App\Http\Controllers\LetterController;
+Route::get('/letter-form', [LetterController::class, 'showForm'])->name('letterForm');
+Route::post('/generate-pdf', [LetterController::class, 'generatePDF'])->name('generatePDF');
