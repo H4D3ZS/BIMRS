@@ -26,7 +26,7 @@ class LetterController extends Controller
             'receivedYear' => $request->receivedYear,
         ];
 
-        $pdf = PDF::loadView('letter', compact('data'));
+        $pdf = PDF::loadView('letters.letter', compact('data'));
 
         return $pdf->download('letter.pdf');
     }
