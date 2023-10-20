@@ -4,14 +4,6 @@
     <form action="{{ route('generatePDF') }}" method="post">
         @csrf
         <div class="form-group">
-            <label for="complainantName">Complainant's Name:</label>
-            <input type="text" name="complainantName" id="complainantName" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="respondentName">Respondent's Name:</label>
-            <input type="text" name="respondentName" id="respondentName" class="form-control">
-        </div>
-        <div class="form-group">
             <label for="caseNumber">Barangay Case No:</label>
             <input type="text" name="caseNumber" id="caseNumber" class="form-control">
         </div>
@@ -36,7 +28,7 @@
             <input type="text" name="receivedDay" id="receivedDay" class="form-control">
         </div>
         <div class="form-group">
-            <label for "receivedMonth">Received Month:</label>
+            <label for="receivedMonth">Received Month:</label>
             <input type="text" name="receivedMonth" id="receivedMonth" class="form-control">
         </div>
         <div class="form-group">

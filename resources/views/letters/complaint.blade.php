@@ -7,11 +7,8 @@
     <p>Office of the Lupong Tagapagmayapa</p>
     <p>Barangay Case No: {{ $data['caseNumber'] }}</p>
     <p>For:</p>
-
-    <p>Name: {{$data['complainantName']}}</p>
     <p>Complainants</p>
     <p>-against-</p>
-    <p>Name: {{$data['respondentName']}}</p>
     <p>Respondents</p>
 
     <p>Complainants</p>

@@ -82,7 +82,7 @@
                         <label for="contact_number">Contact Number</label>
                         <input type="text" id="complainant_contact_number" class="form-control">
                      </div>
-   <button type="submit" id="createblotterBtn" class="btn btn-success">Create Blotter</button>
+   <button type="type" id="createblotterBtn" class="btn btn-success">Next</button>
 </form>
 
 

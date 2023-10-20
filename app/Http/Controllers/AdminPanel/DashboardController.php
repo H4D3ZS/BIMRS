@@ -17,7 +17,7 @@ class DashboardController extends Controller
         if (!session()->has("user")) {
             return redirect("login");
         }
-        
+
         $brgy_official = brgy_official::all();
         $area_setting = area_setting::all();
         $registered = DB::table('resident_infos')->count();
@@ -32,6 +32,9 @@ class DashboardController extends Controller
         return view('pages.AdminPanel.dashboard',['brgy_official'=>$brgy_official,'area_setting'=>$area_setting,
         'male'=>$male,'female'=>$female,'voter'=>$voter,'registered'=>$registered,'certificate_requests'=>$certificate_requests]);
     }
+
+
+
 }
 
 

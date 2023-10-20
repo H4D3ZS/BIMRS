@@ -1,5 +1,3 @@
-
-
 @extends('layouts.apps')
 @section('content')
 <div class="col-sm-12 text-left ">
@@ -200,8 +198,6 @@
                       <th class="column-title">Incident Type </th>
                       <th class="column-title">Incident Date </th>
                       <th class="column-title">Incident Time</th>
-                      <th class="column-title">Incident Location</th>
-                      <th class="column-title">Incident Status</th>
 
                       <th class="bulk-actions" hidden colspan="7">
                          <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
@@ -621,4 +617,3 @@
 </div>
 
 @endsection
-
